@@ -4,7 +4,13 @@ import random
 
 chs = string.printable
 
-password_length = int(input("Enter password length : "))
+while True:
+    password_length = input("Enter password length: ")
+    try:
+        password_length = int(password_length)
+        break
+    except ValueError:
+        print("Invalid length.")
 
 password_gen = random.choices(chs, k=password_length)
 
